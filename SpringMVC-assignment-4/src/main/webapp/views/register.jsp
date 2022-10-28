@@ -21,19 +21,20 @@
 				<div class="card-body">
 					<form action="register" method="post" id="reg-form">
 						<div class="form-group">
-							<label for="email" style=" margin-top: 5%">Email:</label> <input type="email"
+							<label for="email" style=" margin-top: 5%">Email:<span style="color:red;padding-left:5px">*</span></label>
+							 <input type="email"
 								class="form-control" id="useremail" placeholder="Enter email"
-								name="email">
+								name="email" required="required">
 						</div>
 						<div class="form-group">
-							<label for="username" style=" margin-top: 5%">Username:</label> <input type="text"
+							<label for="username" style=" margin-top: 5%">Username:<span style="color:red;padding-left:5px">*</span></label> <input type="text"
 								class="form-control" id="username" placeholder="Enter username"
-								name="name">
+								name="name" required="required">
 						</div>
 						<div class="form-group">
-							<label for="userpassword" style=" margin-top: 5%">Password:</label> <input type="password"
+							<label for="userpassword" style=" margin-top: 5%">Password:<span style="color:red;padding-left:5px">*</span></label> <input type="password"
 								class="form-control" id="userpassword"
-								placeholder="Enter password" name="password" >
+								placeholder="Enter password" name="password" required="required">
 						</div>
 						<span></span>
 						<div class="container text-center py-3">

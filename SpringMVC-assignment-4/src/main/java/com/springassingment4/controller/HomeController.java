@@ -1,15 +1,11 @@
 package com.springassingment4.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.springassingment4.dao.UserRepository;
@@ -50,19 +46,21 @@ public class HomeController {
 	@RequestMapping(value="/register",method = RequestMethod.POST)
 	public @ResponseBody Response registeringData(@RequestBody User user)
 	{	
+		
 		if(this.repository.insertUser(user))
 			return new Response("Success","No Error");
 		else
 			return new Response("Failed","Something Went Wrong on server side");		
 	}
 	@RequestMapping(value="/login",method = RequestMethod.POST)
-	public @ResponseBody Response loginCreds(@RequestBody User user)
+	public @ResponseBody Response loginCreds(@RequestBody User user,Model model)
 	{
 		if(this.repository.validateUser(user))
 			return new Response("Success","No Error");
 		else
 			return new Response("Error","Wrong Creds");
 	}
+	
 	
 
 }

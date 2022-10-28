@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -12,16 +13,7 @@
 <title>Login Page</title>
 </head>
 <body>
-<!-- 	<h1>Login Page</h1>
 
-	<form action="login" method="post" id="log-form">
-		Email : <input type="email" id="useremail" name="email"
-			placeholder="Enter your email"><br> Password : <input
-			type="password" id="userpassword" name="password"
-			placeholder="Enter your password"><br> <input
-			type="submit">
-	</form> -->
-	
 	<div class="container py-5 ">
 		<div class="col-md-5 offset-md-3">
 			<div class="card">
@@ -31,14 +23,15 @@
 				<div class="card-body">
 					<form action="login" method="post" id="log-form">
 						<div class="form-group">
-							<label for="email">Email:</label> <input type="email"
+							<label for="email">Email:<span style="color:red;padding-left:5px">*</span></label> <input type="email"
 								class="form-control" id="useremail" placeholder="Enter email"
-								name="email">
+								name="email" required="required">
+								
 						</div>
 						<div class="form-group">
-							<label for="userpassword" style=" margin-top: 5%">Password:</label> <input type="password"
+							<label for="userpassword" style=" margin-top: 5%">Password:<span style="color:red;padding-left:5px">*</span></label> <input type="password"
 								class="form-control" id="userpassword"
-								placeholder="Enter password" name="password">
+								placeholder="Enter password" name="password" required="required">
 						</div>
 						<span></span>
 						<div class="container text-center py-3">
